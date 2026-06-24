@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products – Amazon.in</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://www.amazon.in/favicon.ico" />
+</head>
+<body class="products-page">
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-logo">
+      <a href="index.html" aria-label="Amazon Home">
+        <svg class="logo-svg" viewBox="0 0 120 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="2" y="28" font-family="'Trebuchet MS',sans-serif" font-size="30" font-weight="900" fill="#FF9900" letter-spacing="-1">amazon</text>
+          <path d="M8 33 Q50 43 100 33" stroke="#FF9900" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <polygon points="96,30 103,35 96,38" fill="#FF9900"/>
+        </svg>
+        <span class="logo-in">.in</span>
+      </a>
+    </div>
+
+    <div class="nav-delivery">
+      <span class="delivery-icon">📍</span>
+      <div class="delivery-text">
+        <span class="deliver-to">Deliver to</span>
+        <span class="location">India 110001</span>
+      </div>
+    </div>
+
+    <div class="nav-search">
+      <select class="search-category" id="searchCategory" aria-label="Search category">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="home">Home &amp; Kitchen</option>
+        <option value="books">Books</option>
+        <option value="appliances">Appliances</option>
+        <option value="sports">Sports</option>
+      </select>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search Amazon.in" aria-label="Search Amazon" autocomplete="off" />
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+          <path d="M21 20l-4.35-4.35A7.5 7.5 0 1 0 15 17.35L19.3 21.6 21 20zM10.5 16a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="nav-right">
+      <div class="nav-lang">
+        <span class="flag">🇮🇳</span>
+        <select aria-label="Language" class="lang-select">
+          <option>EN</option>
+          <option>HI</option>
+          <option>TA</option>
+        </select>
+      </div>
+      <div class="nav-account">
+        <span class="nav-line1">Hello, Sign in</span>
+        <span class="nav-line2">Account &amp; Lists ▾</span>
+      </div>
+      <div class="nav-returns">
+        <span class="nav-line1">Returns</span>
+        <span class="nav-line2">&amp; Orders</span>
+      </div>
+      <a href="cart.html" class="nav-cart" aria-label="Shopping Cart">
+        <div class="cart-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+            <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM5.2 4H3V2H1v2h2l3.6 7.59L5.25 14c-.16.28-.25.61-.25.96C5 16.1 5.9 17 7 17h14v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 23.46 4H5.2z"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+        <span class="cart-label">Cart</span>
+      </a>
+      <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- ===== SECONDARY NAV ===== -->
+  <nav class="secondary-nav" aria-label="Secondary navigation">
+    <ul class="secondary-nav-list">
+      <li><a href="#" class="all-btn"><span>☰</span> All</a></li>
+      <li><a href="products.html?filter=deals">Today's Deals</a></li>
+      <li><a href="#">Customer Service</a></li>
+      <li><a href="#">Registry</a></li>
+      <li><a href="#">Gift Cards</a></li>
+      <li><a href="#">Sell</a></li>
+      <li><a href="products.html?cat=electronics">Electronics</a></li>
+      <li><a href="products.html?cat=fashion">Fashion</a></li>
+      <li><a href="products.html?cat=books">Books</a></li>
+      <li><a href="products.html?cat=home">Home &amp; Kitchen</a></li>
+      <li><a href="#">Mobiles</a></li>
+      <li class="nav-prime"><a href="#">Prime</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== PAGE LAYOUT ===== -->
+  <div class="products-layout container">
+
+    <!-- SIDEBAR FILTERS -->
+    <aside class="sidebar" id="sidebar" aria-label="Filters">
+      <div class="sidebar-section">
+        <h3>Department</h3>
+        <ul class="sidebar-list" id="catFilterList">
+          <li><label><input type="radio" name="cat" value="all" checked /> All Categories</label></li>
+          <li><label><input type="radio" name="cat" value="electronics" /> Electronics</label></li>
+          <li><label><input type="radio" name="cat" value="fashion" /> Fashion</label></li>
+          <li><label><input type="radio" name="cat" value="home" /> Home &amp; Kitchen</label></li>
+          <li><label><input type="radio" name="cat" value="books" /> Books</label></li>
+          <li><label><input type="radio" name="cat" value="appliances" /> Appliances</label></li>
+          <li><label><input type="radio" name="cat" value="sports" /> Sports</label></li>
+          <li><label><input type="radio" name="cat" value="beauty" /> Beauty</label></li>
+          <li><label><input type="radio" name="cat" value="toys" /> Toys &amp; Games</label></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Avg. Customer Review</h3>
+        <ul class="sidebar-list" id="ratingFilterList">
+          <li><label><input type="radio" name="rating" value="0" checked /> All Ratings</label></li>
+          <li><label><input type="radio" name="rating" value="4" /> ⭐⭐⭐⭐ &amp; Up</label></li>
+          <li><label><input type="radio" name="rating" value="3" /> ⭐⭐⭐ &amp; Up</label></li>
+          <li><label><input type="radio" name="rating" value="2" /> ⭐⭐ &amp; Up</label></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Price</h3>
+        <ul class="sidebar-list">
+          <li><label><input type="radio" name="price" value="all" checked /> All Prices</label></li>
+          <li><label><input type="radio" name="price" value="0-500" /> Under ₹500</label></li>
+          <li><label><input type="radio" name="price" value="500-2000" /> ₹500 – ₹2,000</label></li>
+          <li><label><input type="radio" name="price" value="2000-10000" /> ₹2,000 – ₹10,000</label></li>
+          <li><label><input type="radio" name="price" value="10000-999999" /> Over ₹10,000</label></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Prime</h3>
+        <ul class="sidebar-list">
+          <li><label><input type="checkbox" id="primeFilter" /> Prime Eligible</label></li>
+        </ul>
+      </div>
+
+      <button class="btn-secondary reset-filters" id="resetFilters">Reset All Filters</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="products-main">
+      <div class="products-toolbar">
+        <div class="results-count" id="resultsCount">Showing all products</div>
+        <div class="toolbar-right">
+          <label for="sortSelect" class="sort-label">Sort by:</label>
+          <select class="sort-select" id="sortSelect">
+            <option value="default">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Avg. Customer Review</option>
+            <option value="alpha">A to Z</option>
+          </select>
+          <div class="view-toggle">
+            <button class="view-btn active" id="gridViewBtn" aria-label="Grid view" title="Grid view">⊞</button>
+            <button class="view-btn" id="listViewBtn" aria-label="List view" title="List view">☰</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <div class="load-more-wrap" id="loadMoreWrap">
+        <button class="btn-secondary load-more" id="loadMoreBtn">Load More Products</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- ===== PRODUCT MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" id="productModal">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <div class="modal-inner">
+        <div class="modal-img-wrap">
+          <div class="modal-img" id="modalImg"></div>
+        </div>
+        <div class="modal-info">
+          <span class="modal-badge" id="modalBadge"></span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <div class="modal-rating" id="modalRating"></div>
+          <div class="modal-prices" id="modalPrices"></div>
+          <p class="modal-desc" id="modalDesc"></p>
+          <div class="modal-meta" id="modalMeta"></div>
+          <button class="btn-primary modal-add-cart" id="modalAddCart">🛒 Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑ Back to Top</button>
+    <div class="footer-links-section">
+      <div class="container footer-cols">
+        <div class="footer-col">
+          <h4>Get to Know Us</h4>
+          <ul>
+            <li><a href="#">About Amazon</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect with Us</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Make Money with Us</h4>
+          <ul>
+            <li><a href="#">Sell on Amazon</a></li>
+            <li><a href="#">Associates</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Let Us Help You</h4>
+          <ul>
+            <li><a href="#">Your Account</a></li>
+            <li><a href="#">Returns Centre</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <a href="index.html" class="footer-logo">
+          <svg viewBox="0 0 100 30" width="80" fill="none">
+            <text x="2" y="24" font-family="'Trebuchet MS',sans-serif" font-size="24" font-weight="900" fill="#FF9900">amazon</text>
+          </svg>
+          <span style="color:#FF9900;font-weight:700;font-size:14px">.in</span>
+        </a>
+        <p class="footer-copy">&copy; 2024 Amazon Clone – College Web Design Workshop Project.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

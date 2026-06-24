@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon.in – Online Shopping</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://www.amazon.in/favicon.ico" />
+</head>
+<body class="home-page">
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-logo">
+      <a href="index.html" aria-label="Amazon Home">
+        <svg class="logo-svg" viewBox="0 0 120 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="2" y="28" font-family="'Trebuchet MS',sans-serif" font-size="30" font-weight="900" fill="#FF9900" letter-spacing="-1">amazon</text>
+          <path d="M8 33 Q50 43 100 33" stroke="#FF9900" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <polygon points="96,30 103,35 96,38" fill="#FF9900"/>
+        </svg>
+        <span class="logo-in">.in</span>
+      </a>
+    </div>
+
+    <div class="nav-delivery">
+      <span class="delivery-icon">📍</span>
+      <div class="delivery-text">
+        <span class="deliver-to">Deliver to</span>
+        <span class="location">India 110001</span>
+      </div>
+    </div>
+
+    <div class="nav-search">
+      <select class="search-category" id="searchCategory" aria-label="Search category">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="home">Home &amp; Kitchen</option>
+        <option value="books">Books</option>
+        <option value="appliances">Appliances</option>
+        <option value="sports">Sports</option>
+      </select>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search Amazon.in" aria-label="Search Amazon" autocomplete="off" />
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+          <path d="M21 20l-4.35-4.35A7.5 7.5 0 1 0 15 17.35L19.3 21.6 21 20zM10.5 16a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="nav-right">
+      <div class="nav-lang" title="Language">
+        <span class="flag">🇮🇳</span>
+        <select aria-label="Language" class="lang-select">
+          <option>EN</option>
+          <option>HI</option>
+          <option>TA</option>
+        </select>
+      </div>
+
+      <div class="nav-account">
+        <span class="nav-line1">Hello, Sign in</span>
+        <span class="nav-line2">Account &amp; Lists ▾</span>
+      </div>
+
+      <div class="nav-returns">
+        <span class="nav-line1">Returns</span>
+        <span class="nav-line2">&amp; Orders</span>
+      </div>
+
+      <a href="cart.html" class="nav-cart" aria-label="Shopping Cart">
+        <div class="cart-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+            <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM5.2 4H3V2H1v2h2l3.6 7.59L5.25 14c-.16.28-.25.61-.25.96C5 16.1 5.9 17 7 17h14v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 23.46 4H5.2z"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+        <span class="cart-label">Cart</span>
+      </a>
+
+      <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- ===== SECONDARY NAV ===== -->
+  <nav class="secondary-nav" aria-label="Secondary navigation">
+    <ul class="secondary-nav-list">
+      <li><a href="#" class="all-btn"><span>☰</span> All</a></li>
+      <li><a href="products.html?filter=deals">Today's Deals</a></li>
+      <li><a href="#">Customer Service</a></li>
+      <li><a href="#">Registry</a></li>
+      <li><a href="#">Gift Cards</a></li>
+      <li><a href="#">Sell</a></li>
+      <li><a href="products.html?cat=electronics">Electronics</a></li>
+      <li><a href="products.html?cat=fashion">Fashion</a></li>
+      <li><a href="products.html?cat=books">Books</a></li>
+      <li><a href="products.html?cat=home">Home &amp; Kitchen</a></li>
+      <li><a href="#">Mobiles</a></li>
+      <li class="nav-prime"><a href="#">Prime</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO CAROUSEL ===== -->
+  <section class="hero" aria-label="Hero Carousel">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="carousel-slide" style="background-image:url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&q=80&auto=format&fit=crop');">
+          <div class="slide-content">
+            <span class="slide-badge">LIMITED TIME</span>
+            <h2>Great Indian Sale</h2>
+            <p>Up to 70% off on top brands. Electronics, Fashion, Home &amp; more.</p>
+            <a href="products.html" class="slide-btn">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop');">
+          <div class="slide-content">
+            <span class="slide-badge">NEW ARRIVAL</span>
+            <h2>Premium Electronics</h2>
+            <p>Latest gadgets at unbeatable prices. Free delivery on Prime.</p>
+            <a href="products.html?cat=electronics" class="slide-btn">Explore</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" style="background-image:url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1600&q=80&auto=format&fit=crop');">
+          <div class="slide-content">
+            <span class="slide-badge">BEST SELLER</span>
+            <h2>Fashion Fiesta</h2>
+            <p>Trending styles for every occasion. New arrivals daily.</p>
+            <a href="products.html?cat=fashion" class="slide-btn">Discover</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" style="background-image:url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1600&q=80&auto=format&fit=crop');">
+          <div class="slide-content">
+            <span class="slide-badge">PRIME EXCLUSIVE</span>
+            <h2>Books &amp; More</h2>
+            <p>Millions of titles. Read anywhere, anytime.</p>
+            <a href="products.html?cat=books" class="slide-btn">Browse Books</a>
+          </div>
+        </div>
+
+        <div class="carousel-slide" style="background-image:url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=1600&q=80&auto=format&fit=crop');">
+          <div class="slide-content">
+            <span class="slide-badge">MEGA DEALS</span>
+            <h2>Home &amp; Kitchen</h2>
+            <p>Transform your space. Top brands, massive discounts.</p>
+            <a href="products.html?cat=home" class="slide-btn">Shop Now</a>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Previous slide">&#10094;</button>
+      <button class="carousel-btn next-btn" id="nextBtn" aria-label="Next slide">&#10095;</button>
+
+      <div class="carousel-dots" id="carouselDots" role="tablist"></div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORY SHORTCUTS ===== -->
+  <section class="category-shortcuts" aria-label="Shop by Category">
+    <div class="container">
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="cat-grid">
+        <a href="products.html?cat=electronics" class="cat-card">
+          <div class="cat-icon">📱</div>
+          <span>Electronics</span>
+        </a>
+        <a href="products.html?cat=fashion" class="cat-card">
+          <div class="cat-icon">👗</div>
+          <span>Fashion</span>
+        </a>
+        <a href="products.html?cat=home" class="cat-card">
+          <div class="cat-icon">🏠</div>
+          <span>Home &amp; Kitchen</span>
+        </a>
+        <a href="products.html?cat=books" class="cat-card">
+          <div class="cat-icon">📚</div>
+          <span>Books</span>
+        </a>
+        <a href="products.html?cat=appliances" class="cat-card">
+          <div class="cat-icon">🖨️</div>
+          <span>Appliances</span>
+        </a>
+        <a href="products.html?cat=sports" class="cat-card">
+          <div class="cat-icon">⚽</div>
+          <span>Sports</span>
+        </a>
+        <a href="products.html?cat=beauty" class="cat-card">
+          <div class="cat-icon">💄</div>
+          <span>Beauty</span>
+        </a>
+        <a href="products.html?cat=toys" class="cat-card">
+          <div class="cat-icon">🧸</div>
+          <span>Toys</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEALS BANNER ===== -->
+  <section class="deals-banner">
+    <div class="container deals-inner">
+      <div class="deal-highlight">
+        <span class="deal-tag">⚡ Lightning Deal</span>
+        <p>Today only — Extra 15% off on Electronics with code <strong>SAVE15</strong></p>
+      </div>
+      <a href="products.html?filter=deals" class="deal-cta">View All Deals →</a>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED / TRENDING PRODUCTS ===== -->
+  <section class="products-section" id="featuredProducts" aria-label="Featured Products">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Trending Products</h2>
+        <a href="products.html" class="see-all">See all →</a>
+      </div>
+
+      <div class="filter-bar" role="tablist" aria-label="Filter by category">
+        <button class="filter-btn active" data-cat="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-cat="electronics" role="tab" aria-selected="false">Electronics</button>
+        <button class="filter-btn" data-cat="fashion" role="tab" aria-selected="false">Fashion</button>
+        <button class="filter-btn" data-cat="home" role="tab" aria-selected="false">Home</button>
+        <button class="filter-btn" data-cat="books" role="tab" aria-selected="false">Books</button>
+        <button class="filter-btn" data-cat="appliances" role="tab" aria-selected="false">Appliances</button>
+        <button class="filter-btn" data-cat="sports" role="tab" aria-selected="false">Sports</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== WHY AMAZON ===== -->
+  <section class="why-amazon">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center">Why Shop with Us?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🚚</div>
+          <h3>Fast Delivery</h3>
+          <p>Get your orders in 1–2 days with Prime. Free delivery on eligible orders.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔒</div>
+          <h3>Secure Payment</h3>
+          <p>Shop with confidence. 100% secure payment methods accepted.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">↩️</div>
+          <h3>Easy Returns</h3>
+          <p>30-day hassle-free return policy on most items.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎧</div>
+          <h3>24/7 Support</h3>
+          <p>Our customer service team is always here to help you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" id="productModal">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <div class="modal-inner">
+        <div class="modal-img-wrap">
+          <div class="modal-img" id="modalImg"></div>
+        </div>
+        <div class="modal-info">
+          <span class="modal-badge" id="modalBadge"></span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <div class="modal-rating" id="modalRating"></div>
+          <div class="modal-prices" id="modalPrices"></div>
+          <p class="modal-desc" id="modalDesc"></p>
+          <div class="modal-meta" id="modalMeta"></div>
+          <button class="btn-primary modal-add-cart" id="modalAddCart">🛒 Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑ Back to Top</button>
+
+    <div class="footer-links-section">
+      <div class="container footer-cols">
+        <div class="footer-col">
+          <h4>Get to Know Us</h4>
+          <ul>
+            <li><a href="#">About Amazon</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Releases</a></li>
+            <li><a href="#">Amazon Science</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect with Us</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Make Money with Us</h4>
+          <ul>
+            <li><a href="#">Sell on Amazon</a></li>
+            <li><a href="#">Amazon Associates</a></li>
+            <li><a href="#">Advertise Your Products</a></li>
+            <li><a href="#">Fulfillment by Amazon</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Let Us Help You</h4>
+          <ul>
+            <li><a href="#">COVID-19 and Amazon</a></li>
+            <li><a href="#">Your Account</a></li>
+            <li><a href="#">Returns Centre</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <a href="index.html" class="footer-logo">
+          <svg viewBox="0 0 100 30" width="80" fill="none">
+            <text x="2" y="24" font-family="'Trebuchet MS',sans-serif" font-size="24" font-weight="900" fill="#FF9900">amazon</text>
+          </svg>
+          <span style="color:#FF9900;font-weight:700;font-size:14px">.in</span>
+        </a>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook" class="social-icon">📘</a>
+          <a href="#" aria-label="Twitter" class="social-icon">🐦</a>
+          <a href="#" aria-label="Instagram" class="social-icon">📸</a>
+          <a href="#" aria-label="YouTube" class="social-icon">▶️</a>
+        </div>
+        <p class="footer-copy">&copy; 2024 Amazon Clone – College Web Design Workshop Project. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
